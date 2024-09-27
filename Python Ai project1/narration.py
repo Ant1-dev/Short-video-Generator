@@ -41,19 +41,19 @@ def parse(narration):
 
     return output
 
-# def create(data, output_file):
-#     narration = ""
-#     for  element in data:
-#         if element["type"] != "text":
-#             continue
-#         narration += element["content"] + "\n\n"
+def create(data, output_file):
+    narration = ""
+    for  element in data:
+        if element["type"] != "text":
+            continue
+        narration += element["content"] + "\n\n"
     
-#     audio = elevenlabs_client.generate(
-#         text=narration,
-#         voice= Voice(
-#             voice_id='onwK4e9ZLuTAKqWW03F9'
-#         ),
-#         model= "eleven_monolingual_v1"
-#     )
-#     save(audio, output_file)
+    audio = elevenlabs_client.generate(
+        text=narration,
+        voice= Voice(
+            voice_id='onwK4e9ZLuTAKqWW03F9'
+        ),
+        model= "eleven_monolingual_v1"
+    )
+    save(audio, output_file)
     

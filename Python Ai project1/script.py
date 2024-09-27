@@ -42,7 +42,7 @@ print(completion.choices[0].message.content)
 data = narration.parse(completion.choices[0].message.content)
 print("\n\n\n")
 print(data)
-#narration.create(data, "narration.mp3")
+narration.create(data, "narration.mp3")
 if not os.path.exists("images"):
     os.makedirs("images")
     

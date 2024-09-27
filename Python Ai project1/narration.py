@@ -3,11 +3,10 @@ from elevenlabs import save, Voice
 import os
 elevenlabs_client = ElevenLabs( api_key=os.getenv("ELEVEN_API_KEY"))
 
-narration_api = "elevenlabs"
-
+#Function to parse/ split up text obtained from openai's text
 def parse(narration):
-    output = []
-    lines = narration.split("\n")
+    output = [] #creating an empty list to put completed parsed narrated text
+    lines = narration.split("\n") #seperating the the narration into a list 
     
     # Initialize variables
     current_background = None
@@ -16,7 +15,7 @@ def parse(narration):
         line = line.strip()  # Clean up leading and trailing whitespace
 
         if line.startswith('**Narrator:**'):
-            # Extract text following 'Narrator: '
+            # Extract text following '**Narrator:**'
             text = line.replace('**Narrator:**', '').strip()
             if current_background:
                 output.append({

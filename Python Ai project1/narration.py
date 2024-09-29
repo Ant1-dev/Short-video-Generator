@@ -41,11 +41,11 @@ def parse(narration):
     return output
 
 def create(data, output_file):
-    narration = ""
+    narration = "" #Inialize narriation
     for  element in data:
-        if element["type"] != "text":
+        if element["type"] != "text": #If current iteration is not text continue to next iteration
             continue
-        narration += element["content"] + "\n\n"
+        narration += element["content"] + "\n\n" # Else add that element value to the narration string
     
     audio = elevenlabs_client.generate(
         text=narration,
